@@ -211,8 +211,11 @@ form {
   color: var(--clr-green-dark);
   letter-spacing: var(--spacing);
 }
+.field {
+  margin-top: 2rem;
+}
 
-.terms__services {
+.field__terms-services {
   height: 10rem;
   width: 100%;
   overflow-y: scroll;
@@ -225,7 +228,7 @@ fieldset {
   border: 2px solid #d3d5f1;
 }
 
-.terms__services-label {
+.field__terms-services--label {
   width: 95%;
   display: inline-block;
   padding: 0.25rem 0.5rem;

@@ -1,114 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/style.css" />
-    <script defer src="./src/script.js"></script>
-    <title>Document</title>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <form>
-        <!-- Switch Btn Email or Mobile -->
-        <div class="navbar__switch-field">
-          <input
-            id="navbar__radio-one"
-            class="navbar__option-email"
-            type="radio"
-            name="emailOrNumber"
-            value="email"
-            form="form"
-            checked
-          />
-          <label for="navbar__radio-one">Email</label>
-          <input
-            id="navbar__radio-two"
-            class="navbar__option-mobile"
-            type="radio"
-            name="emailOrNumber"
-            value="number"
-            form="form"
-          />
-          <label for="navbar__radio-two">Mobile</label>
-        </div>
-        <!-- End Switch Btn Email or Mobile -->
-      </form>
-    </nav>
-    <!-- End Navbar -->
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./src/style.css" />
+      <script defer src="./src/script.js"></script>
+      <title>Document</title>
+   </head>
+   <body>
+      <!-- Navbar -->
+      <nav class="navbar">
+         <form>
+            <!-- Switch Btn Email or Mobile -->
+            <div class="navbar__switch-field">
+               <input
+                  id="navbar__radio-one"
+                  class="navbar__option-email"
+                  type="radio"
+                  name="emailOrNumber"
+                  value="email"
+                  form="form"
+                  checked
+               />
+               <label for="navbar__radio-one">Email</label>
+               <input
+                  id="navbar__radio-two"
+                  class="navbar__option-mobile"
+                  type="radio"
+                  name="emailOrNumber"
+                  value="number"
+                  form="form"
+               />
+               <label for="navbar__radio-two">Mobile</label>
+            </div>
+            <!-- End Switch Btn Email or Mobile -->
+         </form>
+      </nav>
+      <!-- End Navbar -->
 
-    <!-- App -->
-    <div class="form-body">
-      <header>
-        <h2 class="form-body__title">registration page</h2>
-      </header>
-      <form novalidate="novalidate" id="form">
-        <!-- Load Spinner -->
-        <div class="form__blur form__blur--hidden">
-          <div class="form__spinner form__spinner--hidden"></div>
-        </div>
-        <!-- End Load Spinner -->
-        <!-- Form input Email -->
-        <input
-          type="email"
-          name="email"
-          class="form-body__input form-body__input--email"
-          placeholder="Your Email:"
-        />
-        <!-- End Form input Email -->
-        <!-- Form input Phone -->
-        <input
-          type="tel"
-          name="tel"
-          class="form-body__input form-body__input--mobile"
-          placeholder="Your phone number:"
-        />
-        <!-- End Form input Phone -->
+      <!-- App -->
+      <div class="form-body">
+         <header>
+            <h2 class="form-body__title">registration page</h2>
+         </header>
+         <form novalidate="novalidate" id="form">
+            <!-- Load Spinner -->
+            <div class="form__blur form__blur--hidden">
+               <div class="form__spinner form__spinner--hidden"></div>
+            </div>
+            <!-- End Load Spinner -->
+            <!-- Form input Email -->
+            <input
+               type="email"
+               name="email"
+               class="form-body__input form-body__input--email"
+               placeholder="Your Email:"
+            />
+            <!-- End Form input Email -->
+            <!-- Form input Phone -->
+            <input
+               type="tel"
+               name="tel"
+               class="form-body__input form-body__input--mobile"
+               placeholder="Your phone number:"
+            />
+            <!-- End Form input Phone -->
 
-        <div class="form__message-container">
-          <!-- Message Container -->
-          <span class="render__error-msg"></span>
-          <span class="render__successful-msg"></span>
-        </div>
-        <!-- End Message Container -->
+            <div class="form__message-container">
+               <!-- Message Container -->
+               <span class="render__error-msg"></span>
+               <span class="render__successful-msg"></span>
+            </div>
+            <!-- End Message Container -->
 
-        <!--  -->
-        <div class="field">
-          <fieldset>
-            <!-- Terms of Service Newsletter -->
-            <p class="field__terms-services">
-              Terms of Service <br />
-              <br />
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-              quos facilis quaerat reprehenderit laboriosam, et officiis
-              necessitatibus possimus consequatur dignissimos sequi vitae quidem
-              neque suscipit eum, rem nemo aperiam maxime nostrum fugiat illo.
-              Adipisci, laborum ipsum? Aliquid excepturi nobis doloremque nam
-              possimus neque? Culpa officia laboriosam veritatis provident totam
-              dolorum architecto ex quos repellendus quod, quis distinctio fugit
-              iure, tempora repellat natus voluptatum? Dolorum sunt ullam
-              obcaecati eligendi ad odit deserunt voluptatibus, explicabo non!
-              Odio dolor quia aut, consequuntur odit accusamus nihil veritatis,
-              vitae non quo, delectus quos ratione iusto eligendi repellat
-              deserunt. Labore libero temporibus dolor sint quasi aliquid!
-            </p>
-            <label
-              class="field__terms-services--label"
-              for="terms and conditions"
-              >I accept the Terms of Service</label
-            >
-            <input type="checkbox" name="termsAndConditions" />
-            <label class="field__terms-services--label" for="newsletter"
-              >Subscribe to newsletter</label
-            >
-            <input type="checkbox" name="newsletter" />
-          </fieldset>
-          <!-- End Terms of Service Newsletter -->
-        </div>
-        <button class="submit-btn">submit</button>
-      </form>
-    </div>
-    <!-- End App -->
-  </body>
+            <!--  -->
+            <div class="field">
+               <fieldset>
+                  <!-- Terms of Service Newsletter -->
+                  <p class="field__terms-services">
+                     Terms of Service <br />
+                     <br />
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Molestias quos facilis quaerat reprehenderit laboriosam, et
+                     officiis necessitatibus possimus consequatur dignissimos
+                     sequi vitae quidem neque suscipit eum, rem nemo aperiam
+                     maxime nostrum fugiat illo. Adipisci, laborum ipsum?
+                     Aliquid excepturi nobis doloremque nam possimus neque?
+                     Culpa officia laboriosam veritatis provident totam dolorum
+                     architecto ex quos repellendus quod, quis distinctio fugit
+                     iure, tempora repellat natus voluptatum? Dolorum sunt ullam
+                     obcaecati eligendi ad odit deserunt voluptatibus, explicabo
+                     non! Odio dolor quia aut, consequuntur odit accusamus nihil
+                     veritatis, vitae non quo, delectus quos ratione iusto
+                     eligendi repellat deserunt. Labore libero temporibus dolor
+                     sint quasi aliquid!
+                  </p>
+                  <label
+                     class="field__terms-services--label"
+                     for="terms and conditions"
+                     >I accept the Terms of Service</label
+                  >
+                  <input type="checkbox" name="termsAndConditions" />
+                  <label class="field__terms-services--label" for="newsletter"
+                     >Subscribe to newsletter</label
+                  >
+                  <input type="checkbox" name="newsletter" />
+               </fieldset>
+               <!-- End Terms of Service Newsletter -->
+            </div>
+            <button class="submit-btn">submit</button>
+         </form>
+      </div>
+      <!-- End App -->
+   </body>
 </html>

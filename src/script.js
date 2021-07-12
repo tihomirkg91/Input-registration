@@ -70,56 +70,45 @@ const renderSpinner = function () {
 };
 
 // Render Errors for user
-const checkValidEmail = function (data) {
-   if (data.emailOrNumber === "email") {
-      if (
-         data.email.indexOf("@", 0) < 0 ||
-         data.email.indexOf(".", 0) < 0 ||
-         data.email === ""
-      ) {
-         renderError(emailErrorMsg);
-      }
-   }
-};
-
-const checkValidPhone = function (data) {
-   if (data.emailOrNumber === "number") {
-      if (data.tel === "" || isNaN(data.tel)) {
-         renderError(phoneErrorMsg);
-      }
-   }
-};
-
-const checkTermsConditions = function (data) {
-   if (data.termsAndConditions !== "on") {
-      renderError(termsServiceMsg);
-   } else {
-      renderSuccessfulMsg(accountCreateMsg);
-   }
-};
-
-const checkServerResponse = function (response) {
-   if (response.ok === false) renderError(serverErrorMsg);
-};
-
-const initCheckErrors = function (response, data) {
+const checkRenderOnUserInput = function (data, response) {
    const dataObj = Object.fromEntries(data);
-   checkServerResponse(response);
-   checkValidEmail(dataObj);
-   checkValidPhone(dataObj);
-   checkTermsConditions(dataObj);
+   const { emailOrNumber, email, tel, termsAndConditions } = dataObj;
+
+   try {
+      if (emailOrNumber === "email") {
+         if (
+            email.indexOf("@", 0) < 0 ||
+            email.indexOf(".", 0) < 0 ||
+            email === ""
+         )
+            throw Error(emailErrorMsg);
+      }
+      if (emailOrNumber === "number") {
+         if (tel === "" || isNaN(tel)) {
+            throw Error(phoneErrorMsg);
+         }
+      }
+      if (termsAndConditions !== "on") {
+         throw Error(termsServiceMsg);
+      }
+      if (response.ok === false) throw Error(serverErrorMsg);
+   } catch (err) {
+      renderError(err);
+      return;
+   }
+   renderSuccessfulMsg(accountCreateMsg);
 };
 
 const AJAX = async function (data) {
    try {
-      const response = await fetch("https://formspree.io/f/xdoyladj", {
+      const response = await fetch("https://formspree.io/f/xrgraerl", {
          method: "POST",
          body: data,
          headers: {
             Accept: "application/json",
          },
       });
-      initCheckErrors(response, data);
+      checkRenderOnUserInput(data, response);
    } catch (err) {
       console.error(err);
    }

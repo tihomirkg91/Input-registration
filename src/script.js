@@ -105,10 +105,10 @@ const checkServerResponse = function (response) {
 
 const initCheckErrors = function (response, data) {
    const dataObj = Object.fromEntries(data);
+   checkServerResponse(response);
    checkValidEmail(dataObj);
    checkValidPhone(dataObj);
    checkTermsConditions(dataObj);
-   checkServerResponse(response);
 };
 
 const AJAX = async function (data) {

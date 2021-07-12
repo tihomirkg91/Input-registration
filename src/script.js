@@ -93,14 +93,13 @@ const checkValidPhone = function (data) {
 const checkTermsConditions = function (data) {
    if (data.termsAndConditions !== "on") {
       renderError(termsServiceMsg);
+   } else {
+      renderSuccessfulMsg(accountCreateMsg);
    }
 };
 
 const checkServerResponse = function (response) {
    if (response.ok === false) renderError(serverErrorMsg);
-   else {
-      renderSuccessfulMsg(accountCreateMsg);
-   }
 };
 
 const initCheckErrors = function (response, data) {

@@ -69,10 +69,7 @@ const renderSpinner = function () {
    spinner.classList.toggle("form__spinner--hidden");
 };
 
-const checkServerResponse = function (data) {
-   if (data.ok === false) throw Error(serverErrorMsg);
-};
-
+// Render Errors for user
 const checkValidEmail = function (data) {
    if (data.emailOrNumber === "email") {
       if (
@@ -80,7 +77,7 @@ const checkValidEmail = function (data) {
          data.email.indexOf(".", 0) < 0 ||
          data.email === ""
       ) {
-         throw Error(emailErrorMsg);
+         renderError(emailErrorMsg);
       }
    }
 };
@@ -88,15 +85,20 @@ const checkValidEmail = function (data) {
 const checkValidPhone = function (data) {
    if (data.emailOrNumber === "number") {
       if (data.tel === "" || isNaN(data.tel)) {
-         throw Error(phoneErrorMsg);
+         renderError(phoneErrorMsg);
       }
    }
 };
 
 const checkTermsConditions = function (data) {
    if (data.termsAndConditions !== "on") {
-      throw Error(termsServiceMsg);
-   } else {
+      renderError(termsServiceMsg);
+   }
+};
+
+const checkServerResponse = function (response) {
+   if (response.ok === false) renderError(serverErrorMsg);
+   else {
       renderSuccessfulMsg(accountCreateMsg);
    }
 };
@@ -111,20 +113,20 @@ const initCheckErrors = function (response, data) {
 
 const AJAX = async function (data) {
    try {
-      const response = await fetch("https://formspree.io/f/mvodbzrq", {
+      const response = await fetch("https://formspree.io/f/xdoyladj", {
          method: "POST",
          body: data,
          headers: {
             Accept: "application/json",
          },
       });
-
       initCheckErrors(response, data);
    } catch (err) {
-      renderError(err);
+      console.error(err);
    }
 };
 
+// Form submit
 const handleSubmit = function (event) {
    event.preventDefault();
    renderSpinner();

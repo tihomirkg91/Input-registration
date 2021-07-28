@@ -101,7 +101,7 @@ const checkRenderOnUserInput = function (data, response) {
 
 const AJAX = async function (data) {
    try {
-      const response = await fetch("https://formspree.io/f/xrgraerl", {
+      const response = await fetch("https://formspree.io/f/xjvjakog", {
          method: "POST",
          body: data,
          headers: {
